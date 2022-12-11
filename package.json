@@ -1,0 +1,30 @@
+{
+  "name": "druid-website",
+  "version": "0.2.0",
+  "description": "Druid Website (Source)",
+  "keywords": [
+    "druid",
+    "website"
+  ],
+  "private": true,
+  "scripts": {
+    "run": "bundle exec jekyll serve --future --port 4001 --safe",
+    "start": "bundle exec jekyll serve --future --port 4001 --safe",
+    "watch": "gulp watch",
+    "clean": "rm -rf css/*",
+    "compile": "gulp all && cp ./css-extra/* ./css && bundle exec jekyll build",
+    "build": "npm run compile && rm -r ../druid-website/* && cp -r ./_site/* ../druid-website/",
+    "build-release": "./release.sh"
+  },
+  "dependencies": {
+    "broken-link-checker": "0.7.8",
+    "glob": "7.1.2",
+    "gulp": "3.9.1",
+    "gulp-sass": "4.0.1",
+    "natives": "^1.1.6",
+    "node-sass": "4.9.2"
+  },
+  "volta": {
+    "node": "10.24.1"
+  }
+}
